@@ -1,0 +1,33 @@
+while True:
+    print("**--**--**--**--**--Encuesta Purete Che Kape--**--**--**--**--**")
+    final = input('Para finalizar teclea << quit >> ahora, para ir al cuestonario pulsa enter \n')
+    if final == 'quit': break
+    nombre = input('¿Cuál es tu nombre? ')
+    edad = input('¿Cuál es tu edad? ')
+    edad = int(edad)
+    sexo = input('¿Cuál es tu genero? escribe "h" o "m" -> ')
+    pais = input('¿Cuál es tu país? ')
+    ciudad = input(f'Nos has dicho que tu pais es ->{pais.title()} ¿De qué ciudad? ')
+    ocupacion_1=""
+    ocupacion_2=""
+    if edad < 18: ocupacion_1 = input('¿Qué estudias? ')
+    if ocupacion_1 != "" : ocupacion = ocupacion_1
+    if edad > 18: ocupacion_2 = input('¿En qué trabajas? ')
+    if ocupacion_2 != "" : ocupacion = ocupacion_2
+    if sexo == "hombre" or sexo == "h": hombre_1 = input('¿De que club de futbol sos? ')
+    if sexo == "mujer" or sexo == "m": mujer_1 = input('¿Que pensas del feminismo moderno? ')
+    conoces = input("¿Conoces al politico Fulano de tal? ")
+    if conoces == no: 
+        print("Gracias por participar de esta encuesta, chau") 
+        break
+    opinion_marca = input("¿En una escala de 0 a 10 cuanto le pondrias en honestidad a Fulano de tal? ")
+    opinion_marca = int(opinion_marca)
+    if opinion_marca < 8: opinion_marca_2 = input(f"Mmm... Justifica tu {opinion_marca}. Porque lo valoras con {opinion_marca}. ")
+    if opinion_marca >= 8: opinion_marca_2 = input(f"Excelente! Porque has respondido con {opinion_marca} en honestidad. ")
+    file = open("survey_quest.csv","a")
+    file.write(f"'{nombre.title()}',{edad},'{sexo.title()}','{pais.title()}','{ocupacion.title()}','{aficiones}',{opinion_marca},'{opinion_marca_2}'\n")
+    file.close()
+    if opinion_marca >= 8: print("Mil gracias por todo, nos alegramos de que estés feliz con nuestra empresa!")
+    if opinion_marca < 8: print("Vamos a hacer todo lo posible por mejorar! Gracias por tus recomendaciones!")
+
+print(f"{nombre},{edad},{sexo},{pais},{ocupacion},{aficiones}\n") 
